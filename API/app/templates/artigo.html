@@ -1,0 +1,68 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+{% from "macrosFront.html" import generateTitleDescription %}
+{% from "macrosFront.html" import generateSeparator %}
+{% from "macrosFront.html" import generateCartCounter %}
+{% from "macrosFront.html" import generateAtributos %}
+{% block head %}
+
+    <script  src="{{ url_for('static', filename='js/single_artigo.js') }}"></script> 
+    <script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+
+{% endblock %} 
+{% block title %}Artigo{% endblock %}
+{% block body %}
+    {{generatebreadCrumbs(breadCrumbs)}}
+
+    {{generateTitleDescription(info)}}
+ 
+ 
+    <!-- method="POST" action="{{redirect}}" -->
+    </div>
+    <form artigo-id="{{id}}" id="pedido-form" class="options-form" action="{{redirect}}" method="POST">
+        <input type="text" style="display: none;" name="product-id" value="{{id}}">
+        <input type="text" style="display: none;" name="product-category-level-0-id" value="{{categoryLevel0}}">
+
+        {{generateAtributos(atributos)}}
+    
+    <div class="container" style="{% if allowObs == false %} display=none {% endif %}">
+        <div class="row obs-holder">
+            <div class="col">
+                <input class="fatu-input" id="observacoes" placeholder="observações" name="obs" type="text">
+            </div>
+        </div>
+
+        <div class="row qnt-row">
+            <div class="col">
+                <div class="qnt-holder">
+                    <div class="minus qnt-icon">
+                        <i class="fas fa-minus"></i>
+                    </div>
+                    <input min="1" class="input-qnt" disabled type="text" pattern="[0-9]+" name="qnt" value="1">
+                    <div class="plus qnt-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col">
+                <input disabled style="opacity: 0.6;" class="pedir-btn" type="submit" value="adicionar">
+            </div>
+        </div>
+    </div>
+</form> 
+{% endblock %}
+
+{% block ordersCounter %}
+    {{generateCartCounter(ordersCounter)}}     
+{% endblock %}
+
+{% block cartUrl %}
+    {{cartUrl}}
+{% endblock %}
+{% block pagamentoUrl %} 
+    {{pagamentoUrl}}
+{% endblock %}

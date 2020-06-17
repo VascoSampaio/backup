@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "macros.html" import table %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block titulo_content %}
+<h1 class="page-header">Pedidos</h1>
+{{ wtf.quick_form(form) }}  
+{% endblock %}
+
+{% block page_content %}
+
+
+
+
+
+{{ table(header, columns, rows, tabletype, context = None) }}   
+
+                                   
+                            
+                      
+
+{% endblock %}

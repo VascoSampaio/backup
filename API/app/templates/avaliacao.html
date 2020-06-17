@@ -1,0 +1,23 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+
+{% block head %}
+<script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+<script  src="{{ url_for('static', filename='js/starRating.js') }}"></script>   
+
+
+<script  src="{{ url_for('static', filename='js/rate.js') }}"></script>   
+<script  src="{{ url_for('static', filename='js/iconfont.js') }}"></script>   
+
+{% endblock %} 
+{% block title %}Avaliação{% endblock %}
+{% block body %}
+    {{generatebreadCrumbs(breadCrumbs)}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="rateBox"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

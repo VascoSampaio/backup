@@ -1,0 +1,42 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+{% from "macrosFront.html" import generateDisplays %}
+{% from "macrosFront.html" import generateTitleDescription %}
+{% from "macrosFront.html" import generateCartCounter %}
+{% from "macrosFront.html" import generateAccordion %}
+{% from "macrosFront.html" import generateProductsWithCategory0 %}
+{% block head %}
+    <script  src="{{ url_for('static', filename='js/single_category.js') }}"></script>
+    <script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+{% endblock %}
+
+
+
+{% block title %}Menu{% endblock %}
+{% block body %}
+
+    {{generatebreadCrumbs(breadCrumbs)}}
+
+    {{generateTitleDescription(info)}}
+
+    {{generateAccordion(subDisplays)}}
+
+    {{generateProductsWithCategory0(productsToDisplay)}}
+
+{% endblock %}
+
+{% block ordersCounter %}
+    {{generateCartCounter(ordersCounter)}}     
+{% endblock %}
+
+{% block cartUrl %}
+    {{cartUrl}}
+{% endblock %}
+{% block pagamentoUrl %} 
+    {{pagamentoUrl}}
+{% endblock %}
+
+            
+
+        
+            

@@ -1,0 +1,59 @@
+{% extends 'baseFront.html' %}
+{% block head %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    
+{% endblock %} 
+{% block title %}Código{% endblock %} 
+{% block body %}
+<body class="gradient">
+    <div class="vertical-center codigo-page"> 
+        <div class="container codigo-page">
+            <div class="row justify-content-md-center"> 
+                <div class="col">
+                    <div class="image-holder">
+                        <img src="{{ url_for('static', filename='images/Logotipos Mobile-01.png') }}">
+                    </div>
+                </div> 
+                
+            </div>
+            
+            <div class="row justify-content-md-center"> 
+                <div class="col">
+                    <div class="text-holder">
+                        <h2 class="codigo-header">Introduza o código, pleez.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center"> 
+                <div class="col">
+                    <div class="from-holder">
+                        <form id="formulario" action="" method="POST">
+                            <input class="codigoMesa-input"  pattern="[0-9]+" placeholder="Código da Mesa:" minlength="5" maxlength="5" name="codigoMesa" type="text">
+                        </form>
+                    </div>
+                </div>
+            </div>
+ 
+            
+        </div>
+        
+    </div>
+    <div class="modal fade" id="erroCodigo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" show="{{showPopUp}}">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Código Inválido!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Código inexistente</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

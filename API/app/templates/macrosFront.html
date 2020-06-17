@@ -1,0 +1,269 @@
+<!-- BREADCRUMBS -->
+
+{% macro generatebreadCrumbs(breadCrumbs) %}
+<!-- breadCrumbs = [['menu', 'url'], ['...']] -->
+<div class="row">
+    <div class="col">
+        <div id="bread-crumbs">
+            <p>
+            {% for i in range(breadCrumbs|length) %}
+                {% if i !=  (breadCrumbs|length - 1) %}
+                    <a href="{{breadCrumbs[i][1]}}" class="bread-crumbs-text ">{{breadCrumbs[i][0]}}</a>
+                {% else %}
+                    <a href="#" class="bread-crumbs-text current">{{breadCrumbs[i][0]}}</a>
+                {% endif %}
+
+                {% if i !=  (breadCrumbs|length - 1) %}
+                    <i class="fas fa-angle-right"></i>
+                {%endif%}
+
+            {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro generateDisplays(displays) %}
+<!-- displays = [Display(id, nome, url, imagem, descricao), Display(...)] -->
+<div class="row align-self-center">
+    
+    {% for i in range(displays|length) %}
+    
+        <div class="col-6 col-md-6 col-lg-3">
+            <div class="categoria-holder">
+                <a href="{{displays[i].url}}">
+                    <div class="categoria-image-holder"> 
+                        <div class="background" style="background: url({{displays[i].imagem}});"></div>
+                    </div>
+                    <div class="categoria-text-holder">
+                        <p class="categoria-name">{{displays[i].nome}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endmacro %}
+
+
+{% macro generateTitleDescription(info) %}
+<!-- info = ['nome', 'descricao'] -->
+<div class="row">
+    <div class="col">
+        <div class="info-holder">
+            <h3 class="title">{{info[0]}}</h3>
+            {% if info[1] is not none %}
+                <p>{{info[1]}}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro generateProductsWithCategory0(productsToDisplay) %}
+    {% for k in range(productsToDisplay|length) %}
+        <div class="row">
+            <div class="col">
+                <div class="product-category0-holder"><i class="fas fa-angle-right"></i><a href="{{productsToDisplay[k].url}}">{{productsToDisplay[k].nome}} {{productsToDisplay[k].price}}€</a></div>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+{% macro generateAccordion(subDisplays) %}
+    {% if (subDisplays|length) > 0 %}
+        <div class="row cards-holder">
+            <div class="col">
+                <div id="accordion-main">
+                    {% for i in range(subDisplays|length) %}
+                        {% if subDisplays[i].produtos is defined %}
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="sub-categoria-titulo">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#subDisplay{{subDisplays[i].id}}" aria-expanded="false" aria-controls="collapseOne">
+                                            <span class="icon-holder"><i class="fas fa-angle-right"></i><i style="display: none;" class='fas fa-angle-down'></i></span> {{subDisplays[i].nome}}
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="subDisplay{{subDisplays[i].id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+                                    <div class="card-body">
+                                        {% for j in range(subDisplays[i].produtos | length) %}
+                                            <div class="item-holder"><a href="{{subDisplays[i].produtos[j].url}}">{{subDisplays[i].produtos[j].nome}} {{subDisplays[i].produtos[j].price}}€</a></div>
+                                        {% endfor %}
+                                    </div> 
+                                </div>
+                            </div>
+                        {%endif%}  
+                    {% endfor %}
+                </div>
+            </div>
+        </div>          
+    {%endif%}
+{% endmacro %}
+
+
+{% macro generateSeparator(ismultiple, name) %}
+    {% if ismultiple == true %}
+    <div class="separator-holder">
+        <div class="container"> 
+            <div class="row">  
+                <div class="col ">
+                    <div class="separator">
+                        <h3>{{name}}:</h3>
+                        <span>apenas <span style="text-decoration: underline;">um</span> produto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="separator-holder">
+        <div class="container"> 
+            <div class="row">
+                <div class="col ">
+                    <div class="separator">
+                        <h3>{{name}}: Selecione</h3>
+                        <span>caso não queira, não selecione</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endif%}
+{% endmacro %}
+ 
+
+{% macro generateAtributos(atributos) %}
+    {% for i in range(atributos|length) %}
+        {% if atributos[i]['multipleChoice'] == false %}
+            {{generateSeparator(true, atributos[i]['attributeCategoryName'])}}
+            <div class="container">
+                <div class="row">
+                    <div class="col radio-form-holder">
+            {% for j in range(atributos[i]['attributes']|length) %}
+                
+                <div class="option-holder">
+                    <div class="row">
+                        <div class="col">
+                            <p class="atributo-nome">{{atributos[i]['attributes'][j]['name']}}</p>
+                            <span class="atributo-valor">{% if atributos[i]['attributes'][j]['price'] > 0 %}
+                                {{atributos[i]['attributes'][j]['price']}}€
+                                {% endif %}</span>
+                        </div>
+                        <div class="col input-column">
+                            <label class="input-container-radio">
+                                <input type="radio" name="{{atributos[i]['attributeCategoryId']}}" value="{{atributos[i]['attributes'][j]['id']}}">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>           
+            {% endfor %}
+                    </div>
+                </div>
+            </div> 
+        {% else %}
+            {{generateSeparator(false, atributos[i]['attributeCategoryName'])}}
+            <div class="container">
+                <div class="row">
+                    <div class="col radio-form-holder">
+            {% for j in range(atributos[i]['attributes']|length) %} 
+            <div class="option-holder">
+                <div class="row">
+                    <div class="col">
+                        <p class="atributo-nome">{{atributos[i]['attributes'][j]['name']}}</p>
+                        <span class="atributo-valor">{% if atributos[i]['attributes'][j]['price'] > 0 %}
+                            + {{atributos[i]['attributes'][j]['price']}}€
+                           {% endif %}</span>
+                    </div>
+                    <div class="col input-column">
+                        <label class="input-container">
+                            <input type="checkbox" name="{{atributos[i]['attributeCategoryId']}}" value="{{atributos[i]['attributes'][j]['id']}}">
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {%endif%}
+    {% endfor %}
+{% endmacro %}
+
+
+{% macro generateCartCounter(ordersCounter) %}
+    {% if ordersCounter > 0 %}
+        <div class="qnt-value-holder"><span class="qnt-value">{{ordersCounter}}</span></div>
+    {%endif%}
+{% endmacro %}
+
+{% macro generateHeaderImage(headerImageContent) %}
+    <div class="row pedido-title-holder align-items-center">
+        <div class="col-8">
+            <h3 class="title">{{headerImageContent[0]}}</h3>
+        </div>
+        <div class="col-4 icon">
+            <div class="background" style="background: url({{headerImageContent[1]}});">
+
+            </div>
+            <!--<img src="{{headerImageContent[1]}}">-->
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro generateCarrinho(orders) %}
+
+    {% if (orders|length) > 0 %}
+    
+        {% for i in range(orders|length) %}
+            <div class="pedido-holder">
+                <div class="row categoria-title">
+                    <div class="col">
+                        <h2>{{orders[i]['name']}}</h2>
+                    </div>
+                </div>
+                <div class="row pedido-info align-items-center">
+                    <div class="col-12">
+                        {% for j in range(orders[i]['products']|length) %}
+                            <div class="row align-items-start">
+                                <div class="col-4 qnt-holder">
+                                    <form action="" method="post">
+                                        <input style="display: none;" type="text" name="orderItemId" value="{{orders[i]['products'][j]['orderItemId']}}">
+                                        <div class="minus qnt-icon ">
+                                            <button type="submit" name="changeQnt" value="decrement"><i class="fas fa-minus"></i></button>
+                                        </div>
+                                        <input min="1" class="input-qnt" disabled type="text" pattern="[0-9]+" name="qnt" value="{{orders[i]['products'][j]['qnt']}}">
+                                        <div class="plus qnt-icon" orderItemId="{{orders[i]['products'][j]['orderItemId']}}">
+                                            <button type="submit" name="changeQnt" value="icrement"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-8 title-artigo">
+                                    <div class="artigo-info-holder">
+                                        <h4 class="artigo-title">{{orders[i]['products'][j]['name']}}</h4>
+                                        <!--<p>gelo<br>
+                                        limão</p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% set url = orders[i]['image'] %} 
+                    <div class="category-img-holder">
+                        <div class="background" style="background: url({{url}});"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    {%endif%}
+    <form method="GET" action="">
+        <div class="container adicionar-holder align-items-center">
+            <div class="row">
+                <div class="col">
+                    <input name="order" class="pedir-btn" type="submit" value="pedir">
+                </div>
+            </div>
+        </div>
+    </form>
+{% endmacro %}

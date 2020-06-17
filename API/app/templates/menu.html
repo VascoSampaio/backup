@@ -1,0 +1,28 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+{% from "macrosFront.html" import generateDisplays %}
+{% from "macrosFront.html" import generateCartCounter %}
+{% block head %}
+    <script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+{% endblock %}
+
+{% block title %}Menu{% endblock %}
+{% block body %}
+
+    {{generatebreadCrumbs(breadCrumbs)}}
+
+    {{generateDisplays(displays)}}
+
+{% endblock %}
+
+{% block ordersCounter %}
+    {{generateCartCounter(ordersCounter)}}     
+{% endblock %}
+        
+{% block cartUrl %}
+    {{cartUrl}}
+{% endblock %}
+{% block pagamentoUrl %} 
+    {{pagamentoUrl}}
+{% endblock %}
+        

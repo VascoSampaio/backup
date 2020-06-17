@@ -1,0 +1,72 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+{% from "macrosFront.html" import generateCartCounter %}
+{% from "macrosFront.html" import  generateHeaderImage %}
+{% block head %}
+    <script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+{% endblock %}
+
+{% block title %}Pagamento{% endblock %}
+{% block body %}
+
+    {{generatebreadCrumbs(breadCrumbs)}}
+
+    {{generateHeaderImage(headerImageContent)}}
+ 
+
+        <!--<div class="row metodos">
+            <div class="col-12">
+                <div class="categoria-holder">
+                    <a href="#">
+                        <div class="categoria-image-holder" > 
+                           <div class="background" style="background: url('{{ url_for('static', filename='images/mbway.PNG') }}');"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="categoria-holder">
+                    <a href="#">
+                        <div class="categoria-image-holder"> 
+                            <div class="background" style="background: url('{{ url_for('static', filename='images/visa.PNG') }}');"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>-->
+
+        <form method="POST" action="">
+            <div class="row">
+                <div class="col">
+                    <h3 class="faturacao-title">dados de faturação</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="fatu-input" name="nif" id="nif" placeholder="nif" type="number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="fatu-input" name="nome" id="nome" placeholder="nome" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input style="opacity: 1;" class="pedir-btn" type="submit" value="finalizar">
+                </div>
+            </div>
+        </form>
+
+{% endblock %}
+
+{% block ordersCounter %}
+    {{generateCartCounter(ordersCounter)}}     
+{% endblock %}
+        
+{% block cartUrl %}
+    {{cartUrl}}
+{% endblock %}
+{% block pagamentoUrl %} 
+    {{pagamentoUrl}}
+{% endblock %}

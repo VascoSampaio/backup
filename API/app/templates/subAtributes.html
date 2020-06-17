@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "macroSubAtributes.html" import crud %}
+
+{% block titulo_content %}
+<h1 class="page-header">{{titulo}}</h1>
+{% endblock %}
+
+{% block page_content %}
+
+<p>
+   
+        <a href="criarsubThis{{objecto2}}"><button type="button" class="btn btn-primary">Criar {{objecto}} de {{objecto3}}</button></a>
+
+</p>
+
+
+{{ crud(header, columns, rows, tabletype, context = None) }}  
+
+  
+
+{% endblock %}
+

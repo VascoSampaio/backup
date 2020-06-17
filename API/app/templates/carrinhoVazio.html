@@ -1,0 +1,40 @@
+{% extends 'baseFrontHF.html' %}
+{% from "macrosFront.html" import generatebreadCrumbs %}
+{% from "macrosFront.html" import generateCartCounter %}
+{% from "macrosFront.html" import  generateHeaderImage %}
+{% from "macrosFront.html" import  generateCarrinho %}
+{% block head %}
+    <script  src="{{ url_for('static', filename='js/favicon/all.min.js') }}"></script>   
+{% endblock %}
+{% block title %}Carrinho{% endblock %}
+
+
+{% block body %}
+
+    {{generatebreadCrumbs(breadCrumbs)}}
+
+    {{generateHeaderImage(headerImageContent)}}
+
+    <div class="pedido-holder">
+        <div class="row">
+            <div class="col noProducts">
+                <h5 class="title">o seu carrinho está vazio</h5> 
+            </div>
+        </div>
+    </div>
+
+    <div class="row backMenu">
+        <div class="col">
+            <h2 class="title">faça o seu pedido!</h2>
+            <a href="{{menuUrl}}" class="backMenuUrl">voltar ao menu</a>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block cartUrl %}
+    {{cartUrl}}
+{% endblock %}
+{% block pagamentoUrl %} 
+    {{pagamentoUrl}}
+{% endblock %}

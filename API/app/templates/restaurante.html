@@ -1,0 +1,40 @@
+{% extends 'baseFront.html' %}
+{% block head %}
+{{ super() }}
+    <script src="{{ url_for('static', filename='js/redirect.js') }}"></script>
+{% endblock %}
+{% block title %}Restaurante{% endblock %}
+{% block body %}
+    <body >
+        <span style="display: none;" id="menuUrl" menuUrl="{{menuUrl}}"></span>
+        <div class="vertical-center">
+            <div class="container splash">
+                <div class="row justify-content-md-center"> 
+                    <div class="col">
+                        <div class="image-holder">
+                            <div class="background" style="background: url('{{imageUrl}}');"></div>
+                        </div> 
+                    </div>
+                    
+                </div>
+                
+                <div class="row justify-content-md-center"> 
+                    <div class="col">
+                        <div class="text-holder">
+                            <h2>Bem-vindo ao restaurante <br>{{name}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center"> 
+                    <div class="col">
+                        <div class="gif-holder">
+                            
+                            <img src="{{ url_for('static', filename='images/Untitled2.gif') }}">
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+{% endblock %}

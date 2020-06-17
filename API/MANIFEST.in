@@ -1,0 +1,4 @@
+include flasky.py
+include config.py
+graft app
+global-exclude *.pyc

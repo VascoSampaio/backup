@@ -1,0 +1,729 @@
+/* REGULAR */
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Regular.ttf");
+    src: url("../fonts/Poppins-Regular.woff") format("woff");
+    
+}
+/* BOLD */
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Bold.ttf");
+    src: url("../fonts/Poppins-Bold.woff") format("woff");
+    font-weight: bold;
+}
+/* BOLDER */
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Bolder.ttf");
+    src: url("../fonts/Poppins-Bolder.woff") format("woff");
+    font-weight: bolder;
+}
+/* LIGHT */
+@font-face{
+    font-family: Poppins;
+    src: url("../fonts/Poppins-Light.ttf");
+    src: url("../fonts/Poppins-Light.woff") format("woff");
+    font-weight: lighter;
+}
+
+html{
+    height: 100%;
+}
+body{
+    position: relative;
+    font-family: Poppins;
+    min-height: 100%;
+    padding-bottom: 90px;
+}
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* HEADER */
+.navbar{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0,0,0,0.15));
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-brand img{
+    width: 125px;
+}
+.header-row{
+    width: 100%;
+}
+
+.header-row .col-12.align-self-end{
+    float: right !important;
+    text-align: right !important;
+}
+.header-row .align-self-end{
+    padding-left: 30px !important;
+    padding-right: 0px !important;
+}
+.navbar .imageholders{
+    text-align: right;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.navbar .imageholders a{
+    padding: 0px 0px 0px 5px;
+}
+/* FOOTER */
+.page-footer{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0,0,0,0.15));
+    padding-bottom: 24px;
+    min-height: 30px;
+}
+
+
+/* HomeScreen */
+.gradient{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0,0,0,0.15));
+}
+.codigo-header{
+    font-size: 35px;
+    font-weight: bold;
+}
+#modalTitle{
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 30px;
+}
+.modal-body{
+    text-align: center;
+}
+.modal-content{
+    border: 3px solid #F79F4D;
+    border-radius: 0px;
+}
+.codigoMesa-value{
+    font-weight: bold;
+}
+.modal-header{
+    border: 0px;
+    text-align: center;
+    position: relative;
+}
+.modal-header .close{
+    position: absolute;
+
+    right: 20px;
+}
+.codigo-page .row{
+    text-align: center;
+}
+.vertical-center {
+    min-height: 90%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 90vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+.image-holder{
+    margin-bottom: 40px;
+}
+.codigo-page .image-holder img{
+    width: 60%;
+}
+.text-holder{
+    margin-bottom: 40px;
+}
+.codigoMesa-btn{
+    margin-top: 20px;
+}
+.codigoMesa-input{
+    text-align: center;
+    border: 3px solid #F79F4D;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+/* SPLASH */
+.splash .image-holder{
+    text-align: center;
+}
+.splash .text-holder{
+    text-align: center;
+}
+.splash .gif-holder{
+    text-align: center;
+    margin-top: 20px;
+}
+.gif-holder img{
+    width: 100px;
+}
+.splash .text-holder h2{
+    font-weight: bold;
+}
+
+/* HOME - Categorias */
+
+.right-icon{
+    text-align: right;
+}
+.left-icon{
+    text-align: left;
+}
+.categoria-image-holder{
+    background-color: #F6F6F6; 
+    text-align: center;
+    padding: 2px;
+    border-radius: 35px;
+    padding: 30px;
+}
+.categoria-image-holder img{
+    width: 170px;
+}
+.categoria-text-holder .categoria-name{
+    margin-top: 15px;
+    text-align: left;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 21px;
+}
+.categoria-holder{
+    margin-bottom: 30px;
+}
+.categoria-holder a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+/* Single Category */
+.qnt-icon{
+    padding: 8px 8px 5px 8px;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 90px;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+.qnt-icon button{
+    background: none !important;
+    border: 0px !important; 
+    padding: 0px !important;
+}
+
+.qnt-holder .fa-minus, .qnt-holder .fa-plus{
+    width: 22px !important;
+}
+
+.qnt-holder{
+    display: flex;
+    justify-content: center;
+}
+.qnt-holder form{
+    display: flex;
+}
+
+.input-qnt{
+    text-align: center;
+    height: 44px;
+    width: 50px;
+    background: none;
+    border: 0px;
+    font-size: 22px;
+}
+
+
+#bread-crumbs{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.bread-crumbs-text{
+    font-weight: lighter;
+}
+
+#bread-crumbs a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+#bread-crumbs a.current{
+    text-decoration: underline;
+}
+
+.info-holder{
+    margin-bottom: 20px;
+}
+.info-holder .title{
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.card-header{
+    background: none;
+    border: 0px;
+    padding-bottom: 0px;
+}
+.card{
+    border: 0px !important;
+}
+.card-body{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.card .btn-link{
+    text-decoration: none;
+}
+
+.sub-categoria-titulo button{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.sub-categoria-titulo button:hover{
+    text-decoration: none;
+    color: black;
+}
+.item-holder a{
+    text-decoration: none;
+    color: black;
+}
+.item-holder{
+    padding: 10px;
+}
+.card-body{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.item-holder a{
+    font-size: 19px;
+}
+.cards-holder{
+    padding-bottom: 50px;
+}
+
+/* SINGLE ARTIGO */
+.separator-holder{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0,0,0,0.15));
+    padding: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.separator-holder h3{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+.input-column{
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.options-form{
+    margin-bottom: 50px;
+}
+
+.pedir-btn{
+    width: 100%;
+    background: #F79F4D;
+    color: black;
+    border: 0px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    opacity: 0.6;
+    border-radius: 15px;
+}
+
+.qnt-row{
+    margin-top: 40px;
+}
+
+/* Checkbox costumization */
+
+.input-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: right;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .input-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 3px solid #ccc;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .input-container:hover input ~ .checkmark-checkbox {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .input-container input:checked ~ .checkmark-checkbox {
+    background-color: #F79F4D;
+    border: 3px solid #F79F4D;
+  }
+  
+  /* Create the checkmark-checkbox/indicator (hidden when not checked) */
+  .checkmark-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark-checkbox when checked */
+  .input-container input:checked ~ .checkmark-checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkmark-checkbox/indicator */
+  .input-container .checkmark-checkbox:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  /* RADIOBUTTON COSTUM */
+  .input-container-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: right;
+  }
+  
+  /* Hide the browser's default radio button */
+  .input-container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .input-container-radio:hover input ~ .checkmark-radio {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .input-container-radio input:checked ~ .checkmark-radio {
+    background-color: #F79F4D;
+    border: 3px solid #F79F4D;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark-radio:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .input-container-radio input:checked ~ .checkmark-radio:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .input-container-radio .checkmark-radio:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+
+  /* CARRINHO */
+  .category-img-holder img{
+    width: 170px;
+  }
+
+  .pedido-holder{
+    background-color: #F6F6F6;
+    padding: 2px;
+    border-radius: 35px;
+    padding: 30px 20px 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .pedido-info .qnt-icon{
+    height: 36px;
+    margin: 0px;
+    width: 35px;
+    padding: 4px 5px 5px 5px;
+  }
+  .categoria-title h2{
+    font-weight: bold;
+    margin-bottom: 22px;
+  }
+  .pedido-holder .input-qnt{
+    width: 40px
+  }
+  .artigo-title{
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 7px;
+  }
+  .align-items-center .align-items-start{
+        padding-left: 25px;
+  }
+  .artigo-info-holder{
+
+  }
+  .pedido-title-holder .icon{
+    text-align: right;
+  }
+  .pedido-title-holder{
+      margin-bottom: 30px;
+  }
+
+  .right-icon{
+      position: relative;
+  }
+  .qnt-value-holder{
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    background: #F79F4D;
+    font-size: 12px;
+    border-radius: 30px;
+    padding: 3px 7px 2px 7px;
+    font-weight: bold;
+  }
+  .adicionar-holder{
+      margin-bottom: 40px;
+  }
+
+  .adicionar-holder .pedir-btn{
+    opacity: 1;
+  }
+  .pedido-title-holder .title{
+    font-weight: bold;
+  }
+
+  .noProducts .title{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+  }
+  .backMenu .backMenuUrl{
+        text-align: center;
+        display: block;
+        color: black;
+        text-decoration: underline;
+
+  }
+  .backMenu .title{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .backMenu{
+    margin-bottom: 30px;
+    margin-top: 50px; 
+  }
+  /* PAGAMENTO */ 
+  .pedido-title-holder img{
+    width: 100px;
+  }
+
+  .fatu-input{
+      width: 100%;
+      background-color: none;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+        padding-left: 10px;
+        height: 50px;
+        font-size: 20px;
+  }
+  .faturacao-title{
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+  .metodos{
+      margin-bottom: 40px;
+  }
+
+  .obs-holder{
+      margin-top: 50px;
+  }
+
+  .pedido-title-holder .background{
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    width: 64px;
+    height: 60px;
+  } 
+.categoria-image-holder .background{
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-size: cover !important;
+}
+.category-img-holder{
+    position: relative;
+}
+.category-img-holder .background{
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    position: absolute;
+    top: -100px; 
+    left: -80px;
+}
+.metodos .categoria-image-holder .background {
+    display: inline-flex;
+    width: 190px !important;
+    height: 180px!important;
+    text-align: center;
+}
+.categoria-image-holder{
+    display: flex;
+    justify-content: center;
+}
+
+.image-holder .restaurante{
+    width: 60%;
+} 
+#pedido-form .atributo-nome{
+    margin-bottom: 0px;
+}
+#pedido-form .atributo-valor{
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.splash .image-holder{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.splash .background{
+    height: 110px;
+    width: 110px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+.callWaiter{
+    text-align: center;
+}
+
+.callWaiter.pedir-btn{
+    font-size: 13px;
+    padding: 15px;
+    margin-top: 0px !important;
+}
+
+.modal-title{
+    font-size: 20px !important; 
+}
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+    list-style-type:none;
+    padding:0;
+    
+    -moz-user-select:none;
+    -webkit-user-select:none;
+  }
+  .rating-stars ul > li.star {
+    display:inline-block;
+    
+  }
+  
+  /* Idle State of the stars */
+  .rating-stars ul > li.star > i.fa {
+    font-size:2.5em; /* Change the size of the stars */
+    color:#ccc; /* Color on idle state */
+  }
+  
+  /* Hover state of the stars */
+  .rating-stars ul > li.star.hover > i.fa {
+    color:#FFCC36;
+  }
+  
+  /* Selected state of the stars */
+  .rating-stars ul > li.star.selected > i.fa {
+    color:#FF912C;
+  }
+
+  .product-category0-holder{
+    padding: .75rem 1.25rem;
+  }
+
+  .product-category0-holder a{
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
+    padding-left: 7px;
+  }
+  
+  .product-category0-holder .fa-angle-right{
+    font-size: 19px;
+  }
+  .billlImage{
+      width: 41px;
+  }
+  .cartImageHolder img{
+    width: 34px !important;
+  }
+  .fa-money-bill-wave{
+    color: black;
+    font-size: 30px;
+  }
+  .fa-user{
+    color: black;
+    font-size: 30px;
+  }
+  .fa-shopping-cart{
+    color: black;
+    font-size: 30px;
+  }
