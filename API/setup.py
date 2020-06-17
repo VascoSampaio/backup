@@ -23,7 +23,7 @@ requires = (
 		"six==1.10.0",
 		"SQLAlchemy==1.1.11",
 		"visitor==0.1.3",
-		"Werkzeug==0.12.2",
+		"Werkzeug==0.15.3",
 		"WTForms==2.1",
 		"PyMySQL==0.9.3",
 		"Flask-HTTPAuth==4.0.0",
