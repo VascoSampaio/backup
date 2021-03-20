@@ -15,7 +15,7 @@ requires = (
 		"Flask-SQLAlchemy==2.2",
 		"Flask-WTF==0.14.2",
 		"itsdangerous==0.24",
-		"Jinja2==2.9.6",
+		"Jinja2==2.11.3",
 		"Mako==1.0.7",
 		"MarkupSafe==1.0",
 		"python-dateutil==2.6.1",
